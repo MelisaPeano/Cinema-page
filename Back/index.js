@@ -1,10 +1,10 @@
 
 const app = require("./server");
 const conDB = require("./conDB/conDB");
-const moviesGet = require("./src/controller/index");
+const  routes = require("./src/routes/index");
 require("dotenv").config();
 
-app.get("/movies", moviesGet);
+app.use("/movies", routes)
 
 app.listen(8080, async () => {
     try {

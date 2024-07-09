@@ -1,11 +1,14 @@
 
 function renderMovies(data) {
     const moviesContainer = document.querySelector(".carousel-inner");
-    const nuevoContenedor = document.createElement("div");
-    nuevoContenedor.classList.add("carousel-item");
-    if( nuevoContenedor.length === 0){
+    let cardMovies = data.map(movie, index => {
+        const nuevoContenedor = document.createElement("div");
+        nuevoContenedor.classList.add("carousel-item");
+        if( index === 0){
         nuevoContenedor.classList.add("active");
-    }
+        }
+    })
+    
     nuevoContenedor.innerHTML = `
     <div class="carousel-item">
     <img src="${data.image}" class="d-block w-100" alt="Movie Poster">
